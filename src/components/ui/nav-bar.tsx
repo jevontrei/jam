@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "./button";
-import { Calendar1, House, Info } from "lucide-react";
+import { Calendar1, CirclePile, House, Info, Theater } from "lucide-react";
 
 // default export
 export default function NavBar() {
@@ -31,6 +31,16 @@ export default function NavBar() {
       name: "Gigs",
       link: "/gigs",
       icon: <Calendar1 />,
+    },
+    {
+      name: "Venues",
+      link: "/venues",
+      icon: <Theater />,
+    },
+    {
+      name: "Artists",
+      link: "/artists",
+      icon: <CirclePile />,
     },
   ];
 

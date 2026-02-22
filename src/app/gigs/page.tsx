@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -8,10 +9,30 @@ export default function Page() {
   const [isPending, setIsPending] = useState(false);
   const [myGigs, setMyGigs] = useState<string[]>([]);
 
-  function handleToggleSaveClick(gig: string) {
+  function handleSaveClick(gig: string) {
     setIsPending(true);
 
     const updatedGigs: string[] = [...myGigs, gig];
+    try {
+      setMyGigs(updatedGigs);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsPending(false);
+    }
+  }
+
+  function handleUnsaveClick(gigToDelete: string) {
+    setIsPending(true);
+
+    const updatedGigs: string[] = [];
+
+    for (const gig of myGigs) {
+      if (gig != gigToDelete) {
+        updatedGigs.push(gig);
+      }
+    }
+
     try {
       setMyGigs(updatedGigs);
     } catch (err) {
@@ -78,28 +99,48 @@ export default function Page() {
               <div className="mx-4 my-1">Artist: {gig.artist}</div>
               <div className="mx-4 my-1">{gig.datetime}</div>
               <div className="mx-4 my-1">{gig.venue}</div>
-              <div className="m-4 p-4 h-48 border border-black rounded-md bg-white">
+              <div className="m-4 p-4 h-36 border border-black rounded-md bg-white">
                 Image
               </div>
-              <Button
-                className="mx-4 my-2 bg-white"
-                disabled={isPending}
-                size="sm"
-                onClick={() => handleToggleSaveClick(gig.title)}
-              >
-                <Image
-                  src="/toggle-right.svg"
-                  alt="toggled on icon"
-                  width={20}
-                  height={20}
-                />
-              </Button>
+              <div className="px-4  flex flex-row items-center">
+                Save
+                <Button
+                  className="m-2 bg-green-100"
+                  disabled={isPending}
+                  size="sm"
+                  onClick={() => handleSaveClick(gig.title)}
+                >
+                  <Image
+                    src="/toggle-right.svg"
+                    alt="toggled on icon"
+                    width={20}
+                    height={20}
+                  />
+                </Button>
+              </div>
             </div>
           ))}
         </div>
-        <div>
-          <h2 className="text-3xl">My Saved Gigs</h2>
-          {myGigs && myGigs.map((gig, i) => <div key={i}>{gig}</div>)}
+        <div className=" p-4 border border-black rounded bg-yellow-200">
+          <h2 className="text-3xl pb-2">My Saved Gigs</h2>
+          <ul>
+            {myGigs &&
+              myGigs.map((gig, i) => (
+                <div
+                  key={i}
+                  className="my-2 flex flex-row items-center justify-between"
+                >
+                  <li>{gig}</li>
+                  <Button
+                    className="ml-4"
+                    variant="destructive"
+                    onClick={() => handleUnsaveClick(gig)}
+                  >
+                    <Trash2 />
+                  </Button>
+                </div>
+              ))}
+          </ul>
         </div>
       </div>
     </div>
