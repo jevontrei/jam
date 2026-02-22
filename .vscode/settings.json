@@ -1,0 +1,6 @@
+// get vs code to recognise my combo of globals.css and tailwind, because it was complaining with `Unknown at rule @apply/* globals.css */`
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

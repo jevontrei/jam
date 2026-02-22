@@ -1,0 +1,101 @@
+[
+    {
+        "name": "sit-ins-welcome"
+    },
+    {
+        "name": "sit-down-listening"
+    },
+    {
+        "name": "new-york-style-jazz"
+    },
+    {
+        "name": "improvised"
+    },
+    {
+        "name": "audience-participation"
+    },
+    {
+        "name": "trad-jazz"
+    },
+    {
+        "name": "covers"
+    },
+    {
+        "name": "modern-jazz"
+    },
+    {
+        "name": "nu-jazz"
+    },
+    {
+        "name": "hard-bop"
+    },
+    {
+        "name": "instrumental"
+    },
+    {
+        "name": "big-band"
+    },
+    {
+        "name": "jmi"
+    },
+    {
+        "name": "con"
+    },
+    {
+        "name": "female"
+    },
+    {
+        "name": "beginner-friendly"
+    },
+    {
+        "name": "student"
+    },
+    {
+        "name": "all-ages"
+    },
+    {
+        "name": "multimedia"
+    },
+    {
+        "name": "adult"
+    },
+    {
+        "name": "nsfw"
+    },
+    {
+        "name": "christmas"
+    },
+    {
+        "name": "roving"
+    },
+    {
+        "name": "free"
+    },
+    {
+        "name": "public"
+    },
+    {
+        "name": "private"
+    },
+    {
+        "name": "house-gig"
+    },
+    {
+        "name": "international"
+    },
+    {
+        "name": "local"
+    },
+    {
+        "name": "bar"
+    },
+    {
+        "name": "club"
+    },
+    {
+        "name": "outdoors"
+    },
+    {
+        "name": "family-friendly"
+    }
+]
